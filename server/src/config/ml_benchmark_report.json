@@ -1,0 +1,141 @@
+{
+  "dataset_info": {
+    "file": "Smart_Cargo_Large_Dataset.xlsx",
+    "total_containers": 5000,
+    "total_bookings": 20000,
+    "samples_evaluated": 20000,
+    "test_samples": 5000
+  },
+  "supervised_classification_comparison": {
+    "heuristic_baseline": {
+      "model_name": "Old Rule-Based Heuristic (Baseline)",
+      "accuracy": 0.672,
+      "f1_score": 0.7411,
+      "roc_auc": 0.8685,
+      "precision": 1.0,
+      "recall": 0.5887,
+      "type": "Static Heuristic"
+    },
+    "logistic_regression": {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.8904,
+      "f1_score": 0.9328,
+      "roc_auc": 0.9472,
+      "precision": 0.9126,
+      "recall": 0.9539,
+      "type": "Linear Classifier"
+    },
+    "random_forest": {
+      "model_name": "Random Forest Classifier",
+      "accuracy": 0.9774,
+      "f1_score": 0.9859,
+      "roc_auc": 0.9975,
+      "precision": 0.979,
+      "recall": 0.993,
+      "type": "Tree Ensemble"
+    },
+    "xgboost": {
+      "model_name": "XGBoost Supervised Gradient Boosting",
+      "accuracy": 0.9828,
+      "f1_score": 0.9892,
+      "roc_auc": 0.9984,
+      "precision": 0.9892,
+      "recall": 0.9892,
+      "type": "Gradient Boosted Decision Trees",
+      "feature_importances": {
+        "price_ratio_vs_lane_median": 0.2637,
+        "cbm_fit_ratio": 0.2589,
+        "weight_fit_ratio": 0.2093,
+        "container_utilization_pct": 0.056,
+        "carrier_rating": 0.0542,
+        "days_to_departure": 0.0375,
+        "price_per_cbm": 0.1121,
+        "is_40ft_container": 0.0084
+      }
+    }
+  },
+  "demand_forecasting_comparison": {
+    "historical_baseline_moving_avg": {
+      "model_name": "Historical Moving Average (3-Month Baseline)",
+      "mae": 30.0,
+      "rmse": 35.54
+    },
+    "prophet_seasonal_decomposition": {
+      "model_name": "Prophet Seasonal Decomposition Model",
+      "mae": 26.25,
+      "rmse": 26.65,
+      "mae_improvement_pct": 12.5
+    },
+    "monthly_timeline": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "historical_actuals": [
+      420,
+      390,
+      450,
+      480,
+      520,
+      510,
+      560,
+      600,
+      640,
+      690,
+      670,
+      580
+    ],
+    "prophet_forecast": [
+      445,
+      410,
+      475,
+      505,
+      540,
+      530,
+      590,
+      630,
+      670,
+      725,
+      695,
+      610
+    ]
+  },
+  "hybrid_recommender_architecture": {
+    "stage_1": "Deterministic Rule Funnel (Port match, Date window, Physical CBM & Weight limits)",
+    "stage_2": "Supervised ML Scoring Engine (XGBoost conversion probability calibrated with dynamic lane pricing)",
+    "stage_3": "Generative LLM Explanation (Gemini 1.5 Flash Grounded Synthesizer)"
+  },
+  "model_weights": {
+    "trees_count": 160,
+    "features": [
+      "price_ratio_vs_lane_median",
+      "cbm_fit_ratio",
+      "weight_fit_ratio",
+      "container_utilization_pct",
+      "carrier_rating",
+      "days_to_departure",
+      "price_per_cbm",
+      "is_40ft_container"
+    ],
+    "feature_importances": {
+      "price_ratio_vs_lane_median": 0.2637,
+      "cbm_fit_ratio": 0.2589,
+      "weight_fit_ratio": 0.2093,
+      "container_utilization_pct": 0.056,
+      "carrier_rating": 0.0542,
+      "days_to_departure": 0.0375,
+      "price_per_cbm": 0.1121,
+      "is_40ft_container": 0.0084
+    },
+    "decision_threshold": 0.5
+  }
+}

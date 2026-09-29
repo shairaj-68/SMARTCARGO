@@ -1,0 +1,63 @@
+{
+  "Logistics_Companies": {
+    "sheet": "Logistics_Companies",
+    "rowsRead": 200,
+    "loaded": 200,
+    "flagged": 0,
+    "rejected": 0,
+    "reasonCodes": {}
+  },
+  "Customers": {
+    "sheet": "Customers",
+    "rowsRead": 1000,
+    "loaded": 1000,
+    "flagged": 0,
+    "rejected": 0,
+    "reasonCodes": {}
+  },
+  "Containers": {
+    "sheet": "Containers",
+    "rowsRead": 5000,
+    "loaded": 4401,
+    "flagged": 599,
+    "rejected": 0,
+    "reasonCodes": {
+      "DUPLICATE_CONTAINER": 599
+    }
+  },
+  "Bookings": {
+    "sheet": "Bookings",
+    "rowsRead": 20000,
+    "loaded": 20000,
+    "flagged": 4039,
+    "rejected": 0,
+    "reasonCodes": {
+      "LANE_MISMATCH": 3590,
+      "CAPACITY_OVERFLOW": 449
+    }
+  },
+  "Available_CBM": {
+    "sheet": "Available_CBM",
+    "rowsRead": 15000,
+    "loaded": 15000,
+    "flagged": 0,
+    "rejected": 0,
+    "reasonCodes": {}
+  },
+  "Prices": {
+    "sheet": "Prices",
+    "rowsRead": 5000,
+    "loaded": 5000,
+    "flagged": 0,
+    "rejected": 0,
+    "reasonCodes": {}
+  },
+  "Shipment_Tracking": {
+    "sheet": "Shipment_Tracking",
+    "rowsRead": 72625,
+    "loaded": 72625,
+    "flagged": 0,
+    "rejected": 0,
+    "reasonCodes": {}
+  }
+}
